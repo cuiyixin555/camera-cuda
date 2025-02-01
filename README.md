@@ -9,4 +9,4 @@ $ ./bazel-bin/rotater/main.exe ./data/image/cat.bmp ./data/output/out.bmp
 ![Image text](https://github.com/cuiyixin555/camera-cuda/examples/data/image/cat.bmp)
 
 ### Output  
-![Image text](/https://github.com/cuiyixin555/camera-cuda/examples/data/image/output.bmp)
+![Image text](/https://github.com/cuiyixin555/camera-cuda/examples/data/output/out.bmp)
