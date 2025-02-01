@@ -1,0 +1,66 @@
+# MIT License
+
+# Copyright (c) 2024-2025 Cui, Xin
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+workspace(name = "camera_cuda_examples")
+
+local_repository(
+    name = "camera_cuda",
+    path = "../",
+)
+
+######################
+# rules_bazel setup  #
+######################
+# Fetches the rules_bazel dependencies and initializes the cuda toolchain.
+# If you want to have a different version of some dependency,
+# you should fetch it *before* calling this.
+
+load("@camera_cuda//cuda:repositories.bzl", "register_detected_cuda_toolchains", "rules_cuda_dependencies")
+
+rules_cuda_dependencies()
+
+register_detected_cuda_toolchains()
+
+#################################
+# Dependencies for nccl example #
+#################################
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "nccl",
+    build_file = "@rules_cuda_examples//nccl:nccl.BUILD",
+    sha256 = "83b299cfc2dfe63887dadf3590b3ac2b8b2fd68ec5515b6878774eda39a697d2",
+    strip_prefix = "nccl-9814c75eea18fc7374cde884592233b6b7dc055b",
+    urls = ["https://github.com/nvidia/nccl/archive/9814c75eea18fc7374cde884592233b6b7dc055b.tar.gz"],
+)
+
+http_archive(
+    name = "nccl-tests",
+    build_file = "@rules_cuda_examples//nccl:nccl-tests.BUILD",
+    patch_args = [
+        "-p1",
+    ],
+    patches = ["@rules_cuda_examples//nccl:nccl-tests-clang.patch"],
+    sha256 = "946adb84f63aec66aea7aab9739d41df81c24f783e85fba6328ba243cfc057e0",
+    strip_prefix = "nccl-tests-1a5f551ffd6e3271982b03a9d5653a3f6ba545fa",
+    urls = ["https://github.com/nvidia/nccl-tests/archive/1a5f551ffd6e3271982b03a9d5653a3f6ba545fa.tar.gz"],
+)
