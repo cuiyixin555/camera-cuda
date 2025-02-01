@@ -1,8 +1,10 @@
 # camera-cuda 
 
 ### How to run demo case
-$ cd examples 
+$ cd examples
+
 $ bazel build //rotater/...  
+
 $ ./bazel-bin/rotater/main.exe ./data/image/cat.bmp ./data/output/out.bmp
 
 ### Input  
