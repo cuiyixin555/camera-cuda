@@ -4,35 +4,25 @@
 
 ### Setup Environment
 
-##### Step1:
-
-###### Please make sure to download the executor file of Bazel version 6.2.0 or above
+##### Step1: Please make sure to download the executor file of Bazel version 6.2.0 or above
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/bazel.jpg)
 
-##### Step2:
-
-###### Please add the path of bazel.exe as environment variables
+##### Step2: Please add the path of bazel.exe as environment variables
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/env.jpg)
 
-##### Step3:
-
-###### Please make sure to install VS2019 and above and add the path as environment variables
+##### Step3: Please make sure to install VS2019 and above and add the path as environment variables
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/vs2019_env.jpg)
 
-##### Step4:
-
-###### Please make sure to install CUDA 12.4 and cuDNN 9.2.0 and add the path as environment variables
+##### Step4: Please make sure to install CUDA 12.4 and cuDNN 9.2.0 and add the path as environment variables
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/cuda_env1.jpg)
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/cuda_env2.jpg)
 
-##### Note:
-
-###### Hardware Configuration: GeForce 4090 24G
+##### Hardware Configuration: GeForce 4090 24G
 
 ### How to Run
 
