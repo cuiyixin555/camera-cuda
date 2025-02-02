@@ -1,6 +1,6 @@
 # camera-cuda 
 
-## This is a repo that integrate multiple image processing algos on CUDA-based acceleration with bazel build
+### This is a repo that integrate multiple image processing algos on CUDA-based acceleration with bazel build
 
 #### Image Opencv API
 $ bazel build //calculators/opencv/...
