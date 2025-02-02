@@ -1,0 +1,23 @@
+[IPDev]
+Version=1
+AteFile=./ateDebug_v2.ate
+ActiveExecutionFlow=IPU6EPFull
+UserDllPath=./../../../../Program Files/Intel/ADTM_sHDR/IQS_Avihai_2/Release/legacy_simulator/common/filters
+DefaultOutputDir=
+AutoCompute=0
+ProbeSingleFile=0
+InputFilter1=Image Input[2]
+OutputFilter1=TiffWriter_TM
+[GUI]
+AppWindowTop=0
+AppWindowLeft=0
+AppWindowWidth=600
+AppWindowHeight=600
+AppWindowState=Maximized
+ViewPin1=Output@TiffWriter_TM
+[Filter@TM_App]
+SaveFilterOutputs=1
+OutputDir=C:\TV\sHDR_for_Bin\20230921_174158\output
+[Image¶Input[2]@1]
+Supplier=ATEImages
+FileName=./../input/input_image.ATEImage
