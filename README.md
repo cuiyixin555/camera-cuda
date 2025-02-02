@@ -2,6 +2,38 @@
 
 ### This is a repo that integrate multiple image processing algos on CUDA-based acceleration with bazel build
 
+### Setup Environment
+
+##### Step1:
+
+###### Please make sure to download the executor file of Bazel version 6.2.0 or above
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/bazel.jpg)
+
+##### Step2:
+
+###### Please add the path of bazel.exe as environment variables
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/env.jpg)
+
+##### Step3:
+
+###### Please make sure to install VS2019 and above and add the path as environment variables
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/vs2019_env.jpg)
+
+##### Step4:
+
+###### Please make sure to install CUDA 12.4 and cuDNN 9.2.0 and add the path as environment variables
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/cuda_env1.jpg)
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/cuda_env2.jpg)
+
+##### Note:
+
+###### Hardware Configuration: GeForce 4090 24G
+
 #### Image Opencv API
 $ bazel build //calculators/opencv/...
 
