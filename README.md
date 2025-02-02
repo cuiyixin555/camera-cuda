@@ -12,23 +12,36 @@ $ ./bazel-bin/calculators/opencv/read_image.exe
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/opencv_imread.png)
 
 #### Image Rotater
-$ cd examples
 
-$ bazel build //rotater/...  
+$ bazel build //calculators/cuda/rotater/...  
 
-$ ./bazel-bin/rotater/main.exe ./data/image/cat.bmp ./data/output/out_flip.bmp
+$ ./bazel-bin/calculators/cuda/rotater/main.exe ./data/image/cat.bmp ./data/output/out_flip.bmp
 
 ##### Image Rotater Output
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/data/output/out_flip.bmp)
 
+#### Image Resize
+
+$ bazel build //calculators/cuda/resize/...
+
+$ ./bazel-bin/calculators/cuda/resize/main.exe
+
+##### Image Resize Output
+
+###### resize_nearest.png
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/data/output/resize_nearest.png)
+
+###### resize_bilinear.png
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/data/output/resize_bilinear.png)
+
 #### Image Edge Detector
 
-$ cd examples
+$ bazel build //calculators/cuda/edge/...
 
-$ bazel build //edge/...
-
-$ ./bazel-bin/edge/main.exe ./data/image/cat.bmp ./data/output/out_edge.bmp
+$ ./bazel-bin/calculators/cuda/edge/main.exe ./data/image/cat.bmp ./data/output/out_edge.bmp
 
 ##### Image Edge Detector Output
 
