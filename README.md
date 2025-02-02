@@ -1,6 +1,6 @@
 # camera-cuda 
 
-### This is repo for image processing with bazel build
+## This is a repo that integrate multiple image processing algos on CUDA-based acceleration with bazel build
 
 ### How to run
 #### Image Rotater
@@ -27,3 +27,6 @@ $ ./bazel-bin/edge/main.exe ./data/image/cat.bmp ./data/output/out_edge.bmp
 
 #### Image Edge Detector Output
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/examples/data/output/out_edge.bmp)
+
+## Reference
+All source code is based on this repo https://github.com/bazel-contrib/rules_cuda 
