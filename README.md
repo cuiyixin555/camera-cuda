@@ -34,7 +34,12 @@
 
 ###### Hardware Configuration: GeForce 4090 24G
 
+### How to Run
+
 #### Image Opencv API
+
+##### Image Read with OpenCV
+
 $ bazel build //calculators/opencv/...
 
 $ ./bazel-bin/calculators/opencv/read_image.exe
@@ -43,23 +48,25 @@ $ ./bazel-bin/calculators/opencv/read_image.exe
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/opencv_imread.png)
 
-#### Image Rotater
+#### Image CUDA API
+
+##### Rotater
 
 $ bazel build //calculators/cuda/rotater/...  
 
 $ ./bazel-bin/calculators/cuda/rotater/main.exe ./data/image/cat.bmp ./data/output/out_flip.bmp
 
-##### Image Rotater Output
+##### Rotater Output
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/data/output/out_flip.bmp)
 
-#### Image Resize
+##### Resize
 
 $ bazel build //calculators/cuda/resize/...
 
 $ ./bazel-bin/calculators/cuda/resize/main.exe
 
-##### Image Resize Output
+##### Resize Output
 
 ###### resize_nearest.png
 
@@ -69,13 +76,13 @@ $ ./bazel-bin/calculators/cuda/resize/main.exe
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/data/output/resize_bilinear.png)
 
-#### Image Edge Detector
+##### Edge Detector
 
 $ bazel build //calculators/cuda/edge/...
 
 $ ./bazel-bin/calculators/cuda/edge/main.exe ./data/image/cat.bmp ./data/output/out_edge.bmp
 
-##### Image Edge Detector Output
+##### Edge Detector Output
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/data/output/out_edge.bmp)
 
