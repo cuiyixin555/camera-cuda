@@ -8,27 +8,27 @@
 
 ###### Please make sure to download the executor file of Bazel version 6.2.0 or above
 
-![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/bazel.jpg)
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/bazel.jpg)
 
 ##### Step2:
 
 ###### Please add the path of bazel.exe as environment variables
 
-![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/env.jpg)
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/env.jpg)
 
 ##### Step3:
 
 ###### Please make sure to install VS2019 and above and add the path as environment variables
 
-![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/vs2019_env.jpg)
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/vs2019_env.jpg)
 
 ##### Step4:
 
 ###### Please make sure to install CUDA 12.4 and cuDNN 9.2.0 and add the path as environment variables
 
-![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/cuda_env1.jpg)
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/cuda_env1.jpg)
 
-![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/cuda_env2.jpg)
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/cuda_env2.jpg)
 
 ##### Note:
 
@@ -41,7 +41,7 @@ $ ./bazel-bin/calculators/opencv/read_image.exe
 
 ##### Output
 
-![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/opencv_imread.png)
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/opencv_imread.png)
 
 #### Image Rotater
 
