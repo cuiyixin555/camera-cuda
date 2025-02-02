@@ -18,10 +18,12 @@ $ bazel build //edge/...
 
 $ ./bazel-bin/edge/main.exe ./data/image/cat.bmp ./data/output/out_edge.bmp
 
-### Input  
+### Input Imgae
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/examples/data/image/cat.bmp)
 
-### Output  
+### Output 
+#### Image Rotater Output
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/examples/data/output/out_flip.bmp)
 
+#### Image Edge Detector Output
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/examples/data/output/out_edge.bmp)
