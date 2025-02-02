@@ -8,7 +8,8 @@ $ bazel build //calculators/opencv/...
 
 $ ./bazel-bin/calculators/opencv/read_image.exe
 
-$ results
+##### Output
+
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/opencv_imread.png)
 
 #### Image Rotater
