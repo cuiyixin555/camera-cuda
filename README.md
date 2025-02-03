@@ -22,7 +22,27 @@
 
 ![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/cuda_env2.jpg)
 
-##### Hardware Configuration: GeForce 4090 24G
+##### Step5: Please make sure you downloads camera-supp 
+
+$ git clone https://github.com/cuiyixin555/camera-supp
+
+$ cd camera-supp
+
+$ git lfs pull
+
+##### Step6: Please make sure the repo of camera-cuda and camera-supp in same directory
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/path_env.jpg)
+
+##### Step7: Please add the path of camera-supp as Win11 environment value
+
+The bazel.exe path is 
+
+C:\\Users\\admin\\OneDrive\\Desktop\\workspace\\camera-supp\\build_tools\\windows\\bazel.exe
+
+![Image text](https://github.com/cuiyixin555/camera-cuda/blob/master/assets/supp_env1.jpg)
+
+##### Note: Hardware Configuration is GeForce 4090 24G
 
 ### How to Run
 
