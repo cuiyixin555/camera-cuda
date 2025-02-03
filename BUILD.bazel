@@ -1,6 +1,6 @@
 # MIT License
 
-# Copyright (c) 2024-2025 Cui, Xin
+# Copyright (c) 2024 Cui, Xin
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,24 +20,3 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-module(
-    name = "camera_cuda",
-    version = "0.0.0",
-    compatibility_level = 1,
-)
-
-bazel_dep(name = "bazel_skylib", version = "1.4.2")
-bazel_dep(name = "platforms", version = "0.0.6")
-
-cuda = use_extension("@camera_cuda//cuda:extensions.bzl", "toolchain")
-cuda.local_toolchain(
-    name = "local_cuda",
-    toolkit_path = "",
-)
-use_repo(cuda, "local_cuda")
-
-register_toolchains(
-    "@local_cuda//toolchain:nvcc-local-toolchain",
-    "@local_cuda//toolchain/clang:clang-local-toolchain",
-    "@local_cuda//toolchain/disabled:disabled-local-toolchain",
-)

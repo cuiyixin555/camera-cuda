@@ -1,4 +1,0 @@
-bool_setting(
-    name = "valid_toolchain_found",
-    build_setting_default = True,
-)

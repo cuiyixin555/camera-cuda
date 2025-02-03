@@ -104,7 +104,13 @@ local_repository(
     },
 )
 
-load("//cuda:repositories.bzl", "register_detected_cuda_toolchains", "rules_cuda_dependencies")
+# Bazel rules of cuda
+local_repository(
+    name = "rules_cuda",
+    path = camera_supp + "/bazelbuild/rules_cuda",
+)
+
+load("@rules_cuda//cuda:repositories.bzl", "register_detected_cuda_toolchains", "rules_cuda_dependencies")
 
 rules_cuda_dependencies()
 
