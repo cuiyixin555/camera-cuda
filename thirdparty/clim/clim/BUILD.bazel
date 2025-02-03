@@ -1,0 +1,105 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "vt",
+    hdrs = [
+        ":vt/vt.h",
+        ":vt/vt_nn.h",
+    ],
+)
+
+cc_library(
+    name = "hash",
+    srcs = [
+        ":hasher/city_internal.h",
+        ":hasher/murmur3_internal.h",
+    ],
+    hdrs = [
+        ":hasher/city.h",
+        ":hasher/hash.h",
+        ":hasher/murmur3.h",
+    ],
+)
+
+cc_library(
+    name = "os",
+    hdrs = [
+        ":aligned_malloc.h",
+        ":barrier.h",
+        ":linux_memcpy_s.h",
+        ":os.h",
+        ":os_path.h",
+    ],
+    defines = select({
+        "@platforms//os:windows": [],
+        "//conditions:default": ["HAS_STD_FS"],
+    }),
+)
+
+cc_library(
+    name = "string",
+    hdrs = [
+        ":const_string.h",
+        ":str_replace.h",
+        ":str_split.h",
+        ":strip.h",
+    ],
+)
+
+cc_library(
+    name = "reflection",
+    hdrs = [
+        ":reflect.h",
+    ],
+    deps = [":string"],
+)
+
+cc_library(
+    name = "container",
+    hdrs = [
+        ":array_arithmetic.h",
+        ":bbox_trait.h",
+        ":bounding_box.h",
+        ":rect.h",
+        ":ringbuffer.h",
+        ":stringview_hash_map.h",
+    ],
+)
+
+cc_library(
+    name = "filter",
+    hdrs = [
+        ":alpha_beta_filter.h",
+        ":kalman_filter.h",
+    ],
+    deps = [
+        ":container",
+    ],
+)
+
+cc_library(
+    name = "base64",
+    hdrs = [
+        ":base64.h",
+    ],
+)
+
+cc_library(
+    name = "math",
+    hdrs = [":numerical.h"],
+)
+
+cc_library(
+    name = "clim",
+    deps = [
+        ":base64",
+        ":container",
+        ":filter",
+        ":hash",
+        ":math",
+        ":os",
+        ":reflection",
+        ":string",
+        ":vt",
+    ],
+)

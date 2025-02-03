@@ -1,0 +1,71 @@
+# INTEL CONFIDENTIAL
+#
+# Copyright (C) 2024 Intel Corporation
+#
+# This software and the related documents are Intel copyrighted materials,
+# and your use of them is governed by the express license under which they
+# were provided to you ("License"). Unless the License provides otherwise,
+# you may not use, modify, copy, publish, distribute, disclose or transmit
+# this software or the related documents without Intel's prior written
+# permission. This software and the related documents are provided as is, with
+# no express or implied warranties, other than those that are expressly stated
+# in the License.
+#
+
+CXX_STD = select({
+    "@platforms//os:windows": ["-std:c++17"],
+    "//conditions:default": ["-std=c++17"],
+})
+
+cc_binary(
+    name = "hash_benchmark",
+    testonly = 1,
+    srcs = [":hash_benchmark.cpp"],
+    copts = CXX_STD,
+    tags = ["benchmark"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "//clim:hash",
+        "@com_google_benchmark//:benchmark_main",
+    ],
+)
+
+cc_binary(
+    name = "string_split_benchmark",
+    testonly = 1,
+    srcs = [":string_split_benchmark.cpp"],
+    copts = CXX_STD,
+    tags = ["benchmark"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "//clim:string",
+        "@com_google_benchmark//:benchmark_main",
+    ],
+)
+
+cc_binary(
+    name = "stringview_hashmap_benchmark",
+    testonly = 1,
+    srcs = [":stringview_hashmap_benchmark.cpp"],
+    copts = CXX_STD,
+    tags = ["benchmark"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "//clim:container",
+        "//clim:hash",
+        "@com_google_benchmark//:benchmark_main",
+    ],
+)
+
+cc_binary(
+    name = "ringbuffer_benchmark",
+    testonly = 1,
+    srcs = [":ringbuffer_benchmark.cpp"],
+    copts = CXX_STD,
+    tags = ["benchmark"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "//clim:container",
+        "@com_google_benchmark//:benchmark_main",
+    ],
+)

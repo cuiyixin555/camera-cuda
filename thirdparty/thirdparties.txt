@@ -1,0 +1,11 @@
+cl_runtime
+compute_sdk
+flatbuffers
+fmt
+gtest
+jsoncpp
+opencv
+pvl
+pybind11
+spdlog
+ze_loader

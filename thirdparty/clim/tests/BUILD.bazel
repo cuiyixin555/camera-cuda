@@ -1,0 +1,133 @@
+"""
+Copyright (c) 2022 Intel Corporation
+Author: Wenyi Tang
+E-mail: wenyi.tang@intel.com
+
+"""
+
+CXX_STD = select({
+    "@platforms//os:windows": ["-std:c++17"],
+    "//conditions:default": ["-std=c++17"],
+})
+
+cc_test(
+    name = "array_arithmetic_test",
+    srcs = [":array_arithmetic_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:container",
+        "//clim:filter",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "barrier_test",
+    srcs = [":barrier_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:os",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "base64_test",
+    srcs = [":base64_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:base64",
+        "//clim:vt",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "const_string_test",
+    srcs = [":const_str_test.cpp"],
+    copts = select({
+        # In MSVC, the macro __FILE__ will expand to file name of the direct
+        # input to the compiler cl.exe . And Bazel will use UNIX path style in
+        # the cli commands, which results in a UNIX relative path string if without
+        # this flag. Use "/FC" to ensure the __FILE__ expands to full Windows path.
+        "@platforms//os:windows": ["/FC"],
+        "//conditions:default": [],
+    }) + CXX_STD,
+    deps = [
+        "//clim:reflection",
+        "//clim:string",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "hash_test",
+    srcs = [":hash_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:hash",
+        "//clim:os",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "os_test",
+    srcs = [":os_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:os",
+        "//clim:string",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "string_test",
+    srcs = [":string_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:string",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "stringview_hashmap_test",
+    srcs = [":stringview_hashmap_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:container",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "vt_nn_test",
+    srcs = ["vt_nn_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:vt",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "vt_test",
+    srcs = ["vt_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:vt",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "ringbuffer_test",
+    srcs = ["ringbuffer_test.cpp"],
+    copts = CXX_STD,
+    deps = [
+        "//clim:container",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
