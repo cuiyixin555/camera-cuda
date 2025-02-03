@@ -21,7 +21,7 @@
 # SOFTWARE.
 #
 
-load("@camera_cuda//bazel:compile_option.bzl", "RAP_DEFAULT_COPTS")
+load("@camera_cuda//bazel:compile_option.bzl", "DEFAULT_COPTS")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -36,7 +36,7 @@ cc_library(
         ":src/os.cc",
     ],
     hdrs = glob(["include/**"]),
-    copts = RAP_DEFAULT_COPTS,
+    copts = DEFAULT_COPTS,
     includes = ["include"],
     strip_include_prefix = "include",
 )

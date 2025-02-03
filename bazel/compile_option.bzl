@@ -25,7 +25,7 @@
 This file is some useful compile options for bazel binary and test
 """
 
-RAP_MSVC_COPTS = [
+MSVC_COPTS = [
     # Enables standard C++ stack unwinding. Catches only standard C++ exceptions
     # when you use catch(...) syntax. Unless /EHc is also specified, the
     # compiler assumes that functions declared as extern "C" may throw a C++
@@ -48,7 +48,7 @@ RAP_MSVC_COPTS = [
     "/wd4819",  # non-unicode charactors
 ]
 
-RAP_CLANG_COPTS = [
+CLANG_COPTS = [
     "-Wno-macro-redefined",
     "-D_WIN32_WINNT=0xA00",  # overwrite built-in 0x0601 which is old win7
     "-Wno-comment",
@@ -62,14 +62,14 @@ RAP_CLANG_COPTS = [
     "-Wno-unknown-warning-option",
 ]
 
-RAP_MSVC_LINKOPTS = [
+MSVC_LINKOPTS = [
     "/DEBUG:FULL",
     "/guard:cf",
     "/DYNAMICBASE",
 ]
 
-RAP_DEFAULT_COPTS = select({
-    "@platforms//os:windows": RAP_MSVC_COPTS + [
+DEFAULT_COPTS = select({
+    "@platforms//os:windows": MSVC_COPTS + [
         "/std:c++20",
         # Set warning level to very strict and treat them as errors
         "/W4",
@@ -88,7 +88,7 @@ RAP_DEFAULT_COPTS = select({
     "//conditions:default": [
         "-std=c++20"
     ],
-    "@platforms//os:linux": RAP_CLANG_COPTS + [
+    "@platforms//os:linux": CLANG_COPTS + [
         "-std=c++20",
         "-Wall",
         "-Wextra",
