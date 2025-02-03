@@ -26,13 +26,24 @@ load("@rules_cuda//cuda:defs.bzl", "cuda_library")
 package(default_visibility = ["//visibility:public"])
 
 cuda_library(
-    name = "imflip",
-    srcs = ["imflip.cu"],
-    hdrs = ["imflip.h"],
+    name = "imhdr",
+    srcs = [
+        "HDRPipeline.cpp",
+        "hdr_pipeline.cu",
+    ],
+    hdrs = [
+        "HDRPipeline.h",
+        "color.cuh",
+    ],
+    deps = [
+        "//calculators/cuda/hdr/framework",
+    ],
 )
 
 cc_binary(
     name = "main",
     srcs = ["main.cpp"],
-    deps = [":imflip"],
+    deps = [
+        ":imhdr",
+    ],
 )

@@ -26,13 +26,21 @@ load("@rules_cuda//cuda:defs.bzl", "cuda_library")
 package(default_visibility = ["//visibility:public"])
 
 cuda_library(
-    name = "imflip",
-    srcs = ["imflip.cu"],
-    hdrs = ["imflip.h"],
-)
-
-cc_binary(
-    name = "main",
-    srcs = ["main.cpp"],
-    deps = [":imflip"],
+    name = "framework",
+    srcs = [
+        "cmd_args.cpp",
+        "pfm.cpp",
+        "png.cpp",
+    ],
+    hdrs = [
+        "cmd_args.h",
+        "color.h",
+        "image.h",
+        "io.h",
+        "pfm.h",
+        "png.h",
+        "rgb32f.h",
+        "rgba32f.h",
+        "rgba8.h",
+    ],
 )
