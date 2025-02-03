@@ -27,54 +27,72 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # # using the local bazel rules
-subway_supp = "../camera-supp"
+camera_supp = "../camera-supp"
 
 # Google test
 local_repository(
     name = "gtest",
-    path = subway_supp + "/gtest",
+    path = camera_supp + "/gtest",
 )
 
 # Bazel rules of c/c++
 local_repository(
     name = "rules_cc",
-    path = subway_supp + "/bazelbuild/rules_cc",
+    path = camera_supp + "/bazelbuild/rules_cc",
 )
+
+# # https://github.com/bazelbuild/rules_foreign_cc/releases
+local_repository(
+    name = "rules_foreign_cc",
+    path = camera_supp + "/bazelbuild/rules_foreign_cc",
+)
+
+load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
 
 # Bazel rules of java
 local_repository(
     name = "rules_java",
-    path = subway_supp + "/bazelbuild/rules_java",
+    path = camera_supp + "/bazelbuild/rules_java",
+)
+
+local_repository(
+    name = "rules_python",
+    path = camera_supp + "/bazelbuild/rules_python",
+)
+
+local_repository(
+    name = "rules_proto",
+    path = camera_supp + "/bazelbuild/rules_proto",
 )
 
 local_repository(
     name = "bazel_skylib",
-    path = subway_supp + "/bazelbuild/bazel-skylib",
+    path = camera_supp + "/bazelbuild/bazel-skylib",
 )
 
 new_local_repository(
     name = "level_zero",
     build_file = "@//bazel:level_zero.BUILD",
-    path = subway_supp + "/ze_loader",
+    path = camera_supp + "/ze_loader",
 )
 
 new_local_repository(
     name = "spdlog",
     build_file = "@//bazel:spdlog.BUILD",
-    path = subway_supp + "/spdlog",
+    path = camera_supp + "/spdlog",
 )
 
 new_local_repository(
     name = "fmt",
     build_file = "@//bazel:fmt.BUILD",
-    path = subway_supp + "/fmt",
+    path = camera_supp + "/fmt",
 )
 
 # using new_local_repository for defining opencv path
 new_local_repository(
     name = "opencv",
     build_file = "@//bazel:opencv.BUILD",
-    path = subway_supp + "/opencv/build",
+    path = camera_supp + "/opencv/build",
 )
 
 local_repository(
@@ -86,11 +104,6 @@ local_repository(
     },
 )
 
-local_repository(
-    name = "camera_cuda_examples",
-    path = "examples",
-)
-
 load("//cuda:repositories.bzl", "register_detected_cuda_toolchains", "rules_cuda_dependencies")
 
 rules_cuda_dependencies()
@@ -100,3 +113,12 @@ register_detected_cuda_toolchains()
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
+
+new_local_repository(
+    name = "camera_supp",
+    build_file_content = """
+filegroup(name = "top", srcs = ["LICENSE"], visibility = ["//visibility:public"])
+""",
+    path = camera_supp,
+)
+
