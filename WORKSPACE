@@ -27,54 +27,54 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # # using the local bazel rules
-subway_deps = "../camera-deps"
+subway_supp = "../camera-supp"
 
 # Google test
 local_repository(
     name = "gtest",
-    path = subway_deps + "/gtest",
+    path = subway_supp + "/gtest",
 )
 
 # Bazel rules of c/c++
 local_repository(
     name = "rules_cc",
-    path = subway_deps + "/bazelbuild/rules_cc",
+    path = subway_supp + "/bazelbuild/rules_cc",
 )
 
 # Bazel rules of java
 local_repository(
     name = "rules_java",
-    path = subway_deps + "/bazelbuild/rules_java",
+    path = subway_supp + "/bazelbuild/rules_java",
 )
 
 local_repository(
     name = "bazel_skylib",
-    path = subway_deps + "/bazelbuild/bazel-skylib",
+    path = subway_supp + "/bazelbuild/bazel-skylib",
 )
 
 new_local_repository(
     name = "level_zero",
     build_file = "@//bazel:level_zero.BUILD",
-    path = subway_deps + "/ze_loader",
+    path = subway_supp + "/ze_loader",
 )
 
 new_local_repository(
     name = "spdlog",
     build_file = "@//bazel:spdlog.BUILD",
-    path = subway_deps + "/spdlog",
+    path = subway_supp + "/spdlog",
 )
 
 new_local_repository(
     name = "fmt",
     build_file = "@//bazel:fmt.BUILD",
-    path = subway_deps + "/fmt",
+    path = subway_supp + "/fmt",
 )
 
 # using new_local_repository for defining opencv path
 new_local_repository(
     name = "opencv",
     build_file = "@//bazel:opencv.BUILD",
-    path = subway_deps + "/opencv/build",
+    path = subway_supp + "/opencv/build",
 )
 
 local_repository(
