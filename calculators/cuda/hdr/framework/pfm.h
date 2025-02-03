@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "rgb32f.h"
-#include "image.h"
+#include "calculators/cuda/hdr/framework/rgb32f.h"
+#include "calculators/cuda/hdr/framework/image.h"
 
 
 namespace PFM

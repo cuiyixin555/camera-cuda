@@ -43,4 +43,7 @@ cuda_library(
         "rgba32f.h",
         "rgba8.h",
     ],
+    deps = [
+        "//calculators/cuda/hdr/framework/CUDA:error",
+    ]
 )

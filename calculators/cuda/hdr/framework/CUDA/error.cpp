@@ -23,7 +23,7 @@
 
 #include <sstream>
 
-#include "error.h"
+#include "calculators/cuda/hdr/framework/CUDA/error.h"
 
 namespace CUDA {
 error::error(cudaError err) : err(err) {}

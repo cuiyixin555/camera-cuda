@@ -23,7 +23,7 @@
 
 #include <math/vector.h>
 
-#include "color.cuh"
+#include "calculators/cuda/hdr/color.cuh"
 
 namespace {
 constexpr unsigned int divup(unsigned int a, unsigned int b) {

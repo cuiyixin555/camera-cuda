@@ -28,18 +28,16 @@
 #include <iomanip>
 #include <iostream>
 
-
 #include <cuda_runtime_api.h>
 
-#include <framework/CUDA/error.h>
-#include <framework/cmd_args.h>
-#include <framework/image.h>
-#include <framework/pfm.h>
-#include <framework/png.h>
-#include <framework/rgb32f.h>
+#include "calculators/cuda/hdr/framework/CUDA/error.h"
+#include "calculators/cuda/hdr/framework/cmd_args.h"
+#include "calculators/cuda/hdr/framework/image.h"
+#include "calculators/cuda/hdr/framework/pfm.h"
+#include "calculators/cuda/hdr/framework/png.h"
+#include "calculators/cuda/hdr/framework/rgb32f.h"
 
-
-#include "HDRPipeline.h"
+#include "calculators/cuda/hdr/HDRPipeline.h"
 
 namespace {
 std::uint8_t toLinear8(float c) {

@@ -12,7 +12,7 @@
 
 #include <png.h>
 
-#include "image.h"
+#include "calculators/cuda/hdr/framework/image.h"
 
 namespace PNG {
 class IStream {

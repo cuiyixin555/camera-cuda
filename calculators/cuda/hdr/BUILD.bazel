@@ -36,7 +36,7 @@ cuda_library(
         "color.cuh",
     ],
     deps = [
-        "//calculators/cuda/hdr/framework",
+        "//calculators/cuda/hdr/framework:framework",
     ],
 )
 

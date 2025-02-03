@@ -5,7 +5,7 @@
 #include <string>
 
 
-#include "png.h"
+#include "calculators/cuda/hdr/framework/png.h"
 
 namespace {
 void error_fn(png_structp png_ptr, png_const_charp error_msg) {

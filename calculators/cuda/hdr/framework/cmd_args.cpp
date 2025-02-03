@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 
-#include "cmd_args.h"
+#include "calculators/cuda/hdr/framework/cmd_args.h"
 
 namespace {
 template <std::size_t N> std::size_t strlen(const char (&str)[N]) {

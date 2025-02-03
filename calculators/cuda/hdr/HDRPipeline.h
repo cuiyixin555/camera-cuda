@@ -30,9 +30,8 @@
 
 #include <cuda_runtime_api.h>
 
-#include <framework/image.h>
-#include <framework/rgb32f.h>
-
+#include "calculators/cuda/hdr/framework/image.h"
+#include "calculators/cuda/hdr/framework/rgb32f.h"
 
 struct cudaFreeDeleter {
   void operator()(void *ptr) const { cudaFree(ptr); }

@@ -4,9 +4,9 @@
 #include <string>
 
 
-#include "io.h"
+#include "calculators/cuda/hdr/framework/io.h"
 
-#include "pfm.h"
+#include "calculators/cuda/hdr/framework/pfm.h"
 
 namespace {
 template <typename T> image<T> load(std::istream &file, const char *type) {
