@@ -1,6 +1,14 @@
 # camera-cuda 
 This is a repo that integrate multiple image processing algos on CUDA-based acceleration with bazel build
 
+There are some cuda-based algorithms covered in this repos, such as HDR, Scaler, Resize, Rotater and Edge Detector etc., which will be updated and iterated from time to time.
+
+Maybe, GDC, DVS, Deblur or anothers image processing algos will be added one by one in the future.
+
+I expect camera-cuda to be used as an image processing library, or be viewed as a middleware, to be called by the camera driver to implement application layer functions.
+
+
+
 ### Setup Environment
 
 ##### Step1: Please make sure to download the executor file of Bazel version 6.2.0 or above
